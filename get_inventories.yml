@@ -20,4 +20,6 @@
         return_content: yes
         status_code: 200
         body_format: json
+        force_basic_auth: yes
         register: web_api_results
+
