@@ -1,0 +1,16 @@
+
+- name: Update the tower inventories
+  hosts: localhost
+  vars:
+    tower_hostname: tower.shadowlab
+    inventory_id: 3
+  connection: local
+  tasks:
+    - name: Update the tower inventory from source
+      uri:
+        url: https://{{ tower_hostname }}/api/v2/inventories/{{ inventory_id }}/update_inventory_sources/
+        method: POST
+        #body: "{{ lookup('file','mesos-consul.json') }}"
+        #body_format: json
+        headers:
+          Content-Type: "application/json"
