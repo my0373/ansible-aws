@@ -18,3 +18,4 @@
           Content-Type: "application/json"
         username: "{{ user }}"
         password: "{{ password }}"
+        validate_certs: no
