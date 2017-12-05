@@ -11,7 +11,7 @@
         instance_type: t2.micro
         image: ami-8b8c57f8
         wait: yes
-        group: ansible-security-group_
+        group: ansible-security-group
         vpc_subnet_id: subnet-b4dd46d0
         assign_public_ip: yes
         monitoring: no
