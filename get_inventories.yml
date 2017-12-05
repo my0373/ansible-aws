@@ -1,0 +1,23 @@
+
+- name: Update the tower inventories
+  hosts: localhost
+  vars:
+    tower_hostname: tower.shadowlab
+    inventory_id: 3
+    user: username
+    password: password
+  connection: local
+  tasks:
+    - name: Update the tower inventory from source
+      uri:
+        url: https://{{ tower_hostname }}/api/v2/inventories/
+        method: GET
+        headers:
+          Content-Type: "application/json"
+        username: "{{ user }}"
+        password: "{{ password }}"
+        validate_certs: no
+        return_content: yes
+        status_code: 200
+        body_format: json
+        register: sonar_web_api_status_output
