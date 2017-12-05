@@ -20,4 +20,4 @@
         return_content: yes
         status_code: 200
         body_format: json
-        register: sonar_web_api_status_output
+        register: web_api_results
