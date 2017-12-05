@@ -16,5 +16,5 @@
         #body_format: json
         headers:
           Content-Type: "application/json"
-        username: "{{ username }}"
+        username: "{{ user }}"
         password: "{{ password }}"
