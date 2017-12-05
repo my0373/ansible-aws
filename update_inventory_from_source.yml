@@ -4,6 +4,8 @@
   vars:
     tower_hostname: tower.shadowlab
     inventory_id: 3
+    user: username
+    password: password
   connection: local
   tasks:
     - name: Update the tower inventory from source
@@ -14,3 +16,5 @@
         #body_format: json
         headers:
           Content-Type: "application/json"
+        username: {{ username }}
+        password: {{ password }}
