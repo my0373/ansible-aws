@@ -1,0 +1,7 @@
+---
+- name: Setup an EC2 instance
+  hosts: localhost
+  connection: local
+  tasks:
+    - debug:
+        msg: "{{ hostvars[groups['amazon'][0]] }}"

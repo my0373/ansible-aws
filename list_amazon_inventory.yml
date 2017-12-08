@@ -9,6 +9,7 @@
   connection: local
   tasks:
     - name: Update the tower inventory from source
+      {{ hostvars[groups['webservers'][0]]['ansible_eth0']['ipv4']['address'] }}
       uri:
         url: https://{{ tower_hostname }}/api/v2/inventories/{{ inventory_id }}/update_inventory_sources/
         method: GET
