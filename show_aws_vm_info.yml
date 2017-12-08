@@ -3,8 +3,6 @@
   hosts: localhost
   connection: local
   tasks:
-    - debug: msg="groups={{tags}}"
-
     - name: print names
       debug: msg="{{ item }}"
       with_items: groups['tag_Name_webserver']
