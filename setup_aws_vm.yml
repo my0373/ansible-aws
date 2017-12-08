@@ -10,6 +10,7 @@
     security_group: ansible-security-group
     vpc_subnet_id: subnet-b4dd46d0
     vm_role: webserver
+    vm_role: webserver
     vm_environment: production
     assign_public_ip: yes
     vm_count: 1
@@ -17,6 +18,8 @@
 
   connection: local
   tasks:
+    - ec2_remote_facts:
+
     - name: Create an EC2 machine
       ec2:
         key_name: "{{ key_name }}"
@@ -32,6 +35,7 @@
         count: "{{ vm_count }}"
         state: present
         instance_tags:
+          Name: "{{ vm_name }}"
           role: "{{ vm_role }}"
           environment:  "{{ vm_environment }}"
       register: newmachines
