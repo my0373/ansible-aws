@@ -17,7 +17,11 @@
         monitoring: no
         count: 1
         state: present
+        instance_tags:
+          Name: webserver
+          Env:  production
       register: newmachines
+
 
     - name: Wait for SSH to start
       wait_for:
