@@ -1,0 +1,8 @@
+---
+  - name: Set authorized key took from file
+    authorized_key:
+      user: ansible
+      state: present
+      ## Yes, it's an embedded key. It's not in use in any real systems anywhere.
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCx8jS2TnhlZ7SnZ4CAUp2KHJ3wtgEPVWJ9IcqnZFuwBAVK73QnXdH5LwqSNUm2UWpoQWnRax7EQdJDTEz1BNFTJ9NuN0xq1PsZeoF6/0Ly432FDD1+2BUjhX22LvzaYh6KOSistatUBokVVLVvdRR3r45wsMLoZ6TfhNp0DL/g1K7J6GUmbgidXLORYI+ZtZCIab35g5is0AyYnhRo3P3xvlk1VOxVxOeAdPzZvTUr89pspXCHinlyxoTVcBUzeckuhIpu74+jjQ+PJhMnvtAuzkpqiEghhKUQPfF7fUL5YeH2Zv5iEb3W+MRJfWBBI32r4X0FrZZlAvCWHZj9gRF"
+    remote_user: "{{ ROOT_USER }}"
