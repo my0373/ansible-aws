@@ -35,4 +35,4 @@
     #    msg: "{{ newmachines.instances[0].public_ip }}"
 
     - debug:
-        msg: "{{ hostvars[groups['amazon'] }}"
+        msg: "{{ hostvars[groups['amazon'][0]] }}"
