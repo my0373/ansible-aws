@@ -32,4 +32,4 @@
         groups: amazon
 
     - debug:
-      msg: "{{ hostvars[groups['amazon'][0]].public_ip }}"
+        msg: "{{ hostvars[groups['amazon'][0]].public_ip }}"
