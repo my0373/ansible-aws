@@ -1,25 +1,39 @@
 ---
 - name: Setup an EC2 instance
   hosts: localhost
+  vars:
+    key_name: towerv2
+    region: eu-west-1
+    zone: eu-west-1a
+    instance_type: t2.micro
+    image: ami-8b8c57f8
+    security_group: ansible-security-group
+    vpc_subnet_id: subnet-b4dd46d0
+    vm_role: webserver
+    vm_environment: production
+    assign_public_ip: yes
+    vm_count: 1
+
+
   connection: local
   tasks:
     - name: Create an EC2 machine
       ec2:
-        key_name: tower
-        region: eu-west-1
-        zone: eu-west-1a
-        instance_type: t2.micro
-        image: ami-8b8c57f8
+        key_name: "{{ key_name }}"
+        region: "{{ region }}"
+        zone: "{{ zone }}"
+        instance_type: "{{ instance_type }}"
+        image: "{{ image }}"
         wait: yes
-        group: ansible-security-group
-        vpc_subnet_id: subnet-b4dd46d0
-        assign_public_ip: yes
+        group: "{{ security_group }}"
+        vpc_subnet_id: "{{ vpc_subnet_id }}"
+        assign_public_ip: "{{ assign_public_ip }}"
         monitoring: no
-        count: 1
+        count: "{{ vm_count }}"
         state: present
         instance_tags:
-          Name: webserver
-          Env:  production
+          role: "{{ vm_role }}"
+          environment:  "{{ vm_environment }}"
       register: newmachines
 
 
