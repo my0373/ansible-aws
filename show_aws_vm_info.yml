@@ -1,7 +1,6 @@
 ---
-- name: Setup an EC2 instance
+- name: Dump the groups
   hosts: localhost
   connection: local
   tasks:
-    - debug:
-        msg: "{{ hostvars[groups['amazon'][0]] }}"
+    - debug: msg="groups={{tags}}"
