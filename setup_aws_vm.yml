@@ -31,8 +31,8 @@
         hostname: "{{ newmachines.instances[0].public_ip }}"
         groups: amazon
 
-    - debug:
-        msg: "{{ newmachines.instances[0].public_ip }}"
+    #- debug:
+    #    msg: "{{ newmachines.instances[0].public_ip }}"
 
     - debug:
-        msg: "{{ hostvars[groups['amazon'][0]]['public_ip'] }}"
+        msg: "{{ hostvars[groups['amazon'] }}"
