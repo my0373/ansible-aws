@@ -15,11 +15,6 @@
     assign_public_ip: yes
     vm_count: 1
 
-
-  connection: local
-  tasks:
-    - ec2_remote_facts:
-
     - name: Create an EC2 machine
       ec2:
         key_name: "{{ key_name }}"
