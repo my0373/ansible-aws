@@ -1,0 +1,29 @@
+---
+# tasks file for webserver_install
+  - name: "Create the server in AWS"
+    include_tasks: create_aws_vm.yml
+    tags: ['setup']
+
+  - name: "Ping as root"
+    include_tasks: ping_as_root_user.yml
+    tags: ['setup']
+
+  - name: "Create ansible group"
+    include_tasks: create_ansible_group.yml
+    tags: ['setup']
+
+  - name: "Create ansible user"
+    include_tasks: create_ansible_user.yml
+    tags: ['setup']
+
+  - name: "Allow ansible user to escalate"
+    include_tasks: add_ansible_to_wheel_group.yml
+    tags: ['setup']
+
+  - name: "Add ansible user to sudo"
+    include_tasks: enable_ansible_sudo_access.yml
+    tags: ['setup']
+
+  - name: "Install SSH key for the ansible user"
+    include_tasks: install_tower_ssh_key.yml
+    tags: ['setup']

@@ -1,0 +1,5 @@
+---
+- name: Install and harden a webserver in AWS
+  hosts:  all
+  roles:
+    - { role: webserver_install }
