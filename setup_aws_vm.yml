@@ -15,6 +15,7 @@
     assign_public_ip: yes
     vm_count: 1
 
+  tasks:
     - name: Create an EC2 machine
       ec2:
         key_name: "{{ key_name }}"
