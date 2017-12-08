@@ -9,7 +9,7 @@
     image: ami-8b8c57f8
     security_group: ansible-security-group
     vpc_subnet_id: subnet-b4dd46d0
-    vm_role: webserver
+    vm_name: webserver
     vm_role: webserver
     vm_environment: production
     assign_public_ip: yes
