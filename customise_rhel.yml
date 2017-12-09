@@ -9,13 +9,13 @@
       - git
 
   tasks:
-    - name: Open http firewalld port
-      firewalld:
-        service: http
-        permanent: true
-        state: enabled
-        immediate: yes
-      become: yes
+   # - name: Open http firewalld port
+   #   firewalld:
+   #     service: http
+   #     permanent: true
+   #     state: enabled
+   #     immediate: yes
+   #   become: yes
 
     ## Install essential packages
     - name: add essential packages
