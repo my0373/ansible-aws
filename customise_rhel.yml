@@ -35,6 +35,20 @@
       notify:
       - restart apache
 
+
+    - name: Build variable page
+      template:
+        src: dumpall.j2
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: "u=rwx,g=rx,o=rx"
+        force: yes
+      become: True
+
   handlers:
     - name: restart apache
       service: name=httpd state=restarted
+
+
+
