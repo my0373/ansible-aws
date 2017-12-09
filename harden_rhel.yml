@@ -55,3 +55,4 @@
         name: ec2-user
         state: absent
         remove: yes
+      remote_user: ansible
