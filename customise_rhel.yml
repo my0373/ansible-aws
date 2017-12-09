@@ -1,13 +1,12 @@
 ---
 - name: Install packages
-  hosts: localhost
+  hosts: all
   vars:
     MOTD_IMPORTANT: "This is the default message"
     ESSENTIAL_PACKAGES:
       - tree
       - vim
       - git
-
 
   tasks:
     - name: Open http firewalld port
@@ -23,7 +22,6 @@
       yum:
         name: "{{ item }}"
         state: latest
-
     ## This list is the name of the RPM's we are looking to install.
       with_items: "{{ ESSENTIAL_PACKAGES }}"
       become: yes
