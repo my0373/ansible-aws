@@ -48,3 +48,7 @@
         timeout=60
       become: false
       when: reboot.changed
+
+    - name: Update security patches only
+      command: yum update -y
+      become: yes
