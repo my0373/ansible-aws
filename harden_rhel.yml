@@ -49,3 +49,8 @@
     - name: Test the server is accessible via the ansible user.
       ping:
       remote_user: ansible
+
+    - name: remove the default ec2-user
+      name: ec2-user
+      state: absent
+      remove: yes
