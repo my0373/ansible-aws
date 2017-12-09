@@ -50,9 +50,9 @@
       ping:
       remote_user: ansible
 
-    - name: remove the default ec2-user
-      user:
-        name: ec2-user
-        state: absent
-        remove: yes
-      remote_user: ansible
+    #- name: remove the default ec2-user
+    #  user:
+    #    name: ec2-user
+    #    state: absent
+    #    remove: yes
+    #  remote_user: ansible
