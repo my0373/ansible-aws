@@ -25,3 +25,16 @@
     ## This list is the name of the RPM's we are looking to install.
       with_items: "{{ ESSENTIAL_PACKAGES }}"
       become: yes
+
+
+    - name: Install apache
+      yum: name=httpd
+
+    - name: start the httpd service
+      service: name=httpd state=started enabled=yes
+      notify:
+      - restart apache
+
+      
+    - name: restart apache
+      service: name=httpd state=restarted
